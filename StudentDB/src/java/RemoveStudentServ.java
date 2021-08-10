@@ -24,6 +24,10 @@ public class RemoveStudentServ extends HttpServlet {
                   PreparedStatement st = con.prepareStatement("delete from STUDENTTABLE where UID=?");
                   st.setInt(1,uid);
                   st.executeUpdate();
+                  out.println("<script>");
+                  out.println("alert('Student Removed.');");
+                  out.println("window.location.replace('./Home');");
+                  out.println("</script>");
                 }
                 else{
                     System.out.println("test3");
@@ -34,6 +38,10 @@ public class RemoveStudentServ extends HttpServlet {
                   st2.setString(1,sn);
                   System.out.println(st2);
                   st2.executeUpdate();
+                  out.println("<script>");
+                  out.println("alert('Student Removed.');");
+                  out.println("window.location.replace('./Home');");
+                  out.println("</script>");
                 }
            
             }catch(Exception e) {

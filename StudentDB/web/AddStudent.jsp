@@ -15,7 +15,7 @@
         <form method="post" action="./Home"><input type="submit" value="Home"></form>
     <center>
         <h2>Add New Student</h2>
-        <form action="./AddStudentServ" method="POST">
+        <form action="./AddStudentServ" method="post">
             <table align="center">
 			<tr>
 				<td>Student Name</td><td><input type="text" name="sname" required></td>

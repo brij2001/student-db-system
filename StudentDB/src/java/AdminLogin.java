@@ -39,7 +39,7 @@ public class AdminLogin extends HttpServlet {
         rd.forward(request,response);  
         }
         else{
-        out.print("Sorry username or password error"); 
+        out.print("Wrong Username or Password."); 
         RequestDispatcher rd=request.getRequestDispatcher("index.html");  
         rd.include(request,response);  
         }

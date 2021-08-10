@@ -28,6 +28,10 @@ public class AddStudentServ extends HttpServlet {
             st.setString(3, loc);
             st.setDate(4, java.sql.Date.valueOf(request.getParameter("dob")));
             st.executeUpdate();
+            out.println("<script>");
+            out.println("alert('Added.');");
+            out.println("window.location.replace('./Home');");
+            out.println("</script>");           
             
             }catch(Exception e) {
             out.println("ERROR "+ e.getMessage());
