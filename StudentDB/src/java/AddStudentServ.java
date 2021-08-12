@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
+
 @WebServlet(urlPatterns = {"/AddStudentServ"})
 public class AddStudentServ extends HttpServlet {
 
@@ -18,7 +19,7 @@ public class AddStudentServ extends HttpServlet {
     PrintWriter out = response.getWriter(); 
             try{
             int uid=Integer.parseInt(request.getParameter("uid"));
-            String sn=request.getParameter("sname");
+            String sn=request.getParameter("sname").toUpperCase();
             String loc=request.getParameter("loc");
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             Connection con=DriverManager.getConnection("jdbc:derby://localhost:1527/StudentDB","root","root");

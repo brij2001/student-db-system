@@ -30,13 +30,13 @@ public class RemoveStudentServ extends HttpServlet {
                   out.println("</script>");
                 }
                 else{
-                    System.out.println("test3");
+                   //System.out.println("test3");
                   String sn=request.getParameter("rem_value");
-                  System.out.println(sn);
+                  //System.out.println(sn);
                   PreparedStatement st2 = con.prepareStatement("delete from STUDENTTABLE where NAME like ?");
-                  System.out.println("test3");
-                  st2.setString(1,sn);
-                  System.out.println(st2);
+                  //System.out.println("test3");
+                  st2.setString(1,sn+"%");
+                  //System.out.println(st2);
                   st2.executeUpdate();
                   out.println("<script>");
                   out.println("alert('Student Removed.');");

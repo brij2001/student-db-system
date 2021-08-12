@@ -22,7 +22,7 @@ public class View extends HttpServlet {
             out.print("<br><form method=\"post\" action=\"./Home\"><input type=\"submit\" value=\"Home\"></form>");
             ResultSet rs=st.executeQuery();
             out.println("<center><table border=1 width=40% height=20%>");  
-             out.println("<tr><th>UID</th><th>Student Name</th><th>Locality</th><th>Date of Birth</th></tr>");  
+             out.println("<tr><th>UID</th><th>Student Name</th><th>Address</th><th>Date of Birth</th><th>Edit</th></tr>");  
              while (rs.next()) 
              {  
                  int u = rs.getInt("UID");  

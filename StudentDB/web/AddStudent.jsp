@@ -24,7 +24,7 @@
 				<td>UID</td><td><input type="number" name="uid" required></td>
 			</tr>
                         <tr>
-				<td>Locality</td><td><input type="text" name="loc" required></td>
+				<td>Address</td><td><input type="text" name="loc" required></td>
 			</tr>
                         <tr>
 				<td>Date of Birth</td><td><input type="date" name="dob" required></td>
