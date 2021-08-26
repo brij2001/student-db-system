@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
     background-image: url("background1.jpg");
     background-size: cover;
     color: white;
-
+    font-family: 'Open Sans', sans-serif;
 }
 
 .box {
@@ -15,7 +15,17 @@ body {
     transform: translate(-50%,-50%);
     width: 400px;
     padding: 40px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 10px;
+}
+.box_table{
+    position: absolute;
+    transform: translate(50%,15%);   
+    width: auto;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.7);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.5);
     border-radius: 10px;
@@ -84,7 +94,7 @@ body {
 }
 
 .centertab {
-  width: 70%;
+  width: 40%;
   text-align: center;
   margin-left: auto; 
   margin-right: auto;
@@ -108,3 +118,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     border-radius: 5px;
 }
+
+td{
+    font-family: 'Roboto', sans-serif;
+}
+

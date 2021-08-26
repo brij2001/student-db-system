@@ -37,11 +37,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-    <body><form method="post" action="./Home"><input class="blubtn" type="submit" value="Home"></form>
+    <body><div class="box_table">
+        <form method="post" action="./Home"><input class="blubtn" type="submit" value="Home"></form>
     <center>
         <h1>Update</h1>
         
-        <table class="centertab table table-dark table-striped">
+        <table class="centertab table table-dark table-striped table-hover table-bordered" >
   <thead>
                 <tr><th>UID</th><th>Student Name</th><th>Address</th><th>Date of Birth</th><th>Edit</th></tr>
                 </thead>
@@ -60,7 +61,7 @@
                  
                 <td><input type="text" name="dob" value="<%=resultSet.getString("DOB")%>"></td>
                             
-                <td><input class="btn btn-primary" type="submit" value="submit"></td></tr>
+                <td><input class="btn btn-primary" type="submit" value="Submit"></td></tr>
                 
         </form>
                 
@@ -68,12 +69,13 @@
                 }
         %>
             </tbody>
-        </table>
+            </table>
+       
           <%
                 connection.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         %>
-    </body>
+        </div></body>
 </html>

@@ -32,10 +32,6 @@ public class UpdateStudentServ extends HttpServlet {
             String loc=request.getParameter("loc");
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             Connection con=DriverManager.getConnection("jdbc:derby://localhost:1527/StudentDB","root","root");
-            System.out.println(original_uid);
-            System.out.println(uid);
-            System.out.println(sn);
-            System.out.println(loc);
             PreparedStatement st = con.prepareStatement("UPDATE STUDENTTABLE SET UID=?,NAME=?,LOCALITY=?,DOB=? WHERE UID=?");
             st.setInt(1, uid);
             st.setString(2,sn);

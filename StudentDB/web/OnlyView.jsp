@@ -37,44 +37,45 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body><div class="box_table"  style="width: 50%;">
         <form method="post" action="./Home"><input class="blubtn" type="submit" value="Home"></form>
     <center>
         <h1>View</h1>
         
-        <table class="centertab table table-dark table-striped" >
+        <table class="centertab table table-dark table-striped table-hover table-bordered" style="width: 90%;">
   <thead>
                 <tr><th>UID</th><th>Student Name</th><th>Address</th><th>Date of Birth</th></tr>
                 </thead>
-                <tbody>
-  
+  <tbody>
 <%
         while (resultSet.next()) {
 %>
-                
                 <form method="post" action="./UpdateStudentServ">
-                <input type="hidden" name="uid" value="<%=resultSet.getInt("UID")%>">
+                <input type="hidden" name="original_uid" value="<%=resultSet.getInt("UID")%>">
                    
-                <tr class="tbody"><td><%=resultSet.getInt("UID")%></td>
+                <tr><td><%=resultSet.getInt("UID")%></td>
                     
                 <td><%=resultSet.getString("NAME")%></td>
                    
                 <td><%=resultSet.getString("LOCALITY")%></td>
                  
                 <td><%=resultSet.getString("DOB")%></td>
-                </tr>           
-                </form>
-        <% 
-            }
-        %>
-        </tbody>
-                </table>
-        <%
+                            
+                </tr>
                 
+        </form>
+                
+        <%
+                }
+        %>
+            </tbody>
+            </table>
+       
+          <%
                 connection.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         %>
-    </body>
+        </div></body>
 </html>
