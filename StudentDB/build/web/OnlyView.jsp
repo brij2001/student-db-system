@@ -36,40 +36,41 @@
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-    <body><form method="post" action="./Home"><input class="blubtn" type="submit" value="Home"></form>
+    </head>
+    <body>
+        <form method="post" action="./Home"><input class="blubtn" type="submit" value="Home"></form>
     <center>
-        <h1>Update</h1>
+        <h1>View</h1>
         
-        <table class="centertab table table-dark table-striped">
+        <table class="centertab table table-dark table-striped" >
   <thead>
-                <tr><th>UID</th><th>Student Name</th><th>Address</th><th>Date of Birth</th><th>Edit</th></tr>
+                <tr><th>UID</th><th>Student Name</th><th>Address</th><th>Date of Birth</th></tr>
                 </thead>
-  <tbody>
+                <tbody>
+  
 <%
         while (resultSet.next()) {
 %>
+                
                 <form method="post" action="./UpdateStudentServ">
-                <input type="hidden" name="original_uid" value="<%=resultSet.getInt("UID")%>">
+                <input type="hidden" name="uid" value="<%=resultSet.getInt("UID")%>">
                    
-                <tr><td><input type="text" name="new_uid" value="<%=resultSet.getInt("UID")%>"></td>
+                <tr class="tbody"><td><%=resultSet.getInt("UID")%></td>
                     
-                <td><input type="text" name="sname" value="<%=resultSet.getString("NAME")%>"></td>
+                <td><%=resultSet.getString("NAME")%></td>
                    
-                <td><input type="text" name="loc" value="<%=resultSet.getString("LOCALITY")%>"></td>
+                <td><%=resultSet.getString("LOCALITY")%></td>
                  
-                <td><input type="text" name="dob" value="<%=resultSet.getString("DOB")%>"></td>
-                            
-                <td><input class="btn btn-primary" type="submit" value="submit"></td></tr>
-                
-        </form>
-                
-        <%
-                }
+                <td><%=resultSet.getString("DOB")%></td>
+                </tr>           
+                </form>
+        <% 
+            }
         %>
-            </tbody>
-        </table>
-          <%
+        </tbody>
+                </table>
+        <%
+                
                 connection.close();
             } catch (Exception e) {
                 e.printStackTrace();

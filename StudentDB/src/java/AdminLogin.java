@@ -29,19 +29,21 @@ public class AdminLogin extends HttpServlet {
             st.setString(2, p);
             
             ResultSet rs=st.executeQuery();
-            status=rs.next();
+            if(status=rs.next()){
+         RequestDispatcher rd=request.getRequestDispatcher("./Home");  
+        rd.forward(request,response);
+                
+            }else{
+        String error ="Wrong Username or Password.";
+         request.setAttribute("auth", error);
+        RequestDispatcher rd=request.getRequestDispatcher("index.jsp");  
+        rd.include(request,response);  
+        }
+                
             
         }catch (Exception e) {
             out.println("ERROR "+ e.getMessage());
         }
-        if(status){
-         RequestDispatcher rd=request.getRequestDispatcher("./Home");  
-        rd.forward(request,response);  
-        }
-        else{
-        out.print("Wrong Username or Password."); 
-        RequestDispatcher rd=request.getRequestDispatcher("index.html");  
-        rd.include(request,response);  
-        }
+       
     }
 }

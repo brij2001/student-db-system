@@ -1,8 +1,8 @@
-<%-- 
+<%
     Document   : UpdateStudent
     Created on : 10-Aug-2021, 8:48:14 pm
-    Author     : brij-pc
---%>
+    Author     : shetty
+
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -23,6 +23,10 @@
     Statement statement = null;
     ResultSet resultSet = null;
 %>
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Update data from database in jsp</h1>
 <%
     try {
         connection = DriverManager.getConnection(connectionUrl + database, userid, password);
@@ -31,10 +35,7 @@
         resultSet = statement.executeQuery(sql);
         while (resultSet.next()) {
 %>
-<!DOCTYPE html>
-<html>
-    <body>
-        <h1>Update data from database in jsp</h1>
+
         <form method="post" action="./UpdateStudentServ">
             <input type="hidden" name="id" value="<%=resultSet.getString("id")%>">
             <input type="text" name="id" value="<%=resultSet.getString("id")%>">
@@ -55,6 +56,9 @@
         </form>
         <%
                 }
+        %>
+        </tbody>
+                </table>
                 connection.close();
             } catch (Exception e) {
                 e.printStackTrace();
