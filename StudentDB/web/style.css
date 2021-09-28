@@ -8,6 +8,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+a{
+    color:white !important;
+    text-decoration: none !important;
+}
 .box {
     position: absolute;
     top: 50%;
@@ -15,7 +19,7 @@ body {
     transform: translate(-50%,-50%);
     width: 400px;
     padding: 40px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(53 51 51 / 55%);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.5);
     border-radius: 10px;

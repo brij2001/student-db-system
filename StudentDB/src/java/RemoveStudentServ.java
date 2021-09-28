@@ -32,10 +32,11 @@ public class RemoveStudentServ extends HttpServlet {
                 else{
                    //System.out.println("test3");
                   String sn=request.getParameter("rem_value");
+                  String sn2=sn.toUpperCase();
                   //System.out.println(sn);
-                  PreparedStatement st2 = con.prepareStatement("delete from STUDENTTABLE where NAME like ?");
+                  PreparedStatement st2 = con.prepareStatement("delete from STUDENTTABLE where NAME = ?");
                   //System.out.println("test3");
-                  st2.setString(1,sn+"%");
+                  st2.setString(1,sn2);
                   //System.out.println(st2);
                   st2.executeUpdate();
                   out.println("<script>");

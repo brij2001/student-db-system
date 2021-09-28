@@ -78,34 +78,6 @@
             }
         %>
         </div>
-    <script  src=
-"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-        </script>
-        <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery.fancytable/dist/fancyTable.min.js"></script>
-        <script type="text/javascript">
-                  
-            $(document).ready(function(){
-              
-                $("#tableID").fancyTable({
-                   sortColumn:0,
-                   /* Setting pagination or enabling */
-                   pagination: false,
-                       globalSearch:true,
-                    /* Exclude 2nd column from global search.*/
-                   globalSearchExcludeColumns: [2],
-                   onInit:function(){                 
-                   /* On initialization of table */
-                                 console.log({ element:this });
-                                    },
-                   onUpdate:function(){
-                   /* On update like search and sort of table */                  
-                    console.log({ element:this });
-                   }
-                       });                            
-            });            
-        </script>
+    
     </body>
 </html>
